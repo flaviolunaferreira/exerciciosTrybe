@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercícios Trybe 5.1</title>
+  <style>
+    div {
+      border-color: black;
+      border-style: solid;
+    }
+  
+    .title {
+      text-align: center;
+    }
+  
+    .main-content {
+      background-color: yellow;
+    }
+  
+    .main-content .center-content {
+      background-color: red;
+      width: 50%;
+      margin: 0 auto;
+    }
+  
+    .main-content .center-content p {
+      font-style: italic;
+    }
+    
+    .btn {
+      margin: 15px 0 15px 0;
+      padding: 10px;
+      background: linear-gradient(gray, black);
+      color: rgb(135, 193, 243);
+    }
+
+    .bt {
+      cursor: pointer;
+      margin: auto;
+    }
+
+
+
+
+  </style>
+</head>
+<body>
+  <h1 class="title">Exercício 5.1 - JavaEscripito </h1>
+  <div class="main-content">
+    <div class="center-content">
+      <p>Texto padrão do nosso site</p>
+      <p>-----</p>
+      <p>Trybe</p>
+    </div>
+  </div>
+  <div class="btn">
+    <input class="btn bt" id="tagP" onclick="tagP()" type="button" value="texto na tag (p)" />
+    <input class="btn bt" id="amareloParaVerde" onclick="amareloParaVerde()" type="button" value="Amarelo para verde" />
+    <input class="btn bt" id="vermelhoParaBranco" onclick="vermelhoParaBranco()" type="button" value="vermelho para Branco" />
+    <input class="btn bt" id="textoH1" type="button" onclick="textoH1()" value="Corrige texto (h1)" />
+    <input class="btn bt" id="maiusculo" type="button" onclick="mudarParaMaiuscula()" value="Muda (p) para maiusculo" />
+    <input class="btn bt" id="imprimeNoConsole" type="button" onclick="imprimeNoConsole()" value="Imprime os (p) no console" />
+  </div>
+
+  <!---------------------------------------------------------------------------------------------->
+  <script>
+    function tagP() {
+      document.getElementsByTagName("p")[1].innerHTML = "Neste período quero ganhar na megaSena!!";
+    }
+
+    function amareloParaVerde() {
+      let minhaCor = document.getElementsByClassName('main-content')[0];
+      minhaCor.style.backgroundColor = 'rgb(76,164,109)';
+    }
+    
+    function vermelhoParaBranco() {
+      let minhaCor = document.getElementsByClassName('center-content')[0];
+      minhaCor.style.backgroundColor = 'rgb(255,255,255)';
+    }
+    function textoH1() {
+      document.getElementsByTagName("h1")[0].innerHTML = 'Exercício 5.1 - JavaEscript';
+    }
+
+    function mudarParaMaiuscula() {
+      let paragrafo = document.getElementsByTagName("p");
+      for (let i = 0; i < paragrafo.length; i += 1) {
+        let auxiliar = document.getElementsByTagName("p")[i].innerText;
+        document.getElementsByTagName("p")[i].innerText = auxiliar.toUpperCase();
+      }
+    }
+
+    function imprimeNoConsole() {
+      let todos = document.getElementsByTagName("*");
+      for (let i = 0; i < 1; i += 1) {
+         console.log(todos[i]); 
+      }
+    }
+
+  </script>
+  <!---------------------------------------------------------------------------------------------->
+</body>
+</html>
